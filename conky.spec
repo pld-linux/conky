@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/conky/%{name}-%{version}.tar.gz
+URL:		http://conky.sourceforge.net/
 BuildRequires:	XFree86-devel
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
@@ -18,8 +19,8 @@ from i2c, MPD info, and anything else you desire) to the root window
 in X11.
 
 %description -l pl
-Conky jest niewielkim monitorem systemu opartym na kodzie torsmo.
-Conky moze wy¶wietlaæ takie informacje jak :
+Conky jest niewielkim monitorem systemu opartym na kodzie torsmo. Mo¿e
+wy¶wietlaæ takie informacje, jak:
 - data
 - temperatura CPU
 - ilo¶æ miejsca na dysku itp.
@@ -42,5 +43,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING NEWS ChangeLog README TODO
-%attr(755,root,root)%{_bindir}/*
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/%{name}.1*
