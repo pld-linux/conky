@@ -8,7 +8,8 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/conky/%{name}-%{version}.tar.gz
 # Source0-md5:	5f76349e16934f54f9ed7d3ab0721a2c
 URL:		http://conky.sourceforge.net/
-#BuildRequires:	XFree86-devel
+BuildRequires:	XFree86-devel
+#Buildrequires:	xorg-lib-libXext-devel #br for modular xorg
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
