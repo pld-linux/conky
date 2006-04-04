@@ -8,10 +8,10 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/conky/%{name}-%{version}.tar.gz
 # Source0-md5:	5f76349e16934f54f9ed7d3ab0721a2c
 URL:		http://conky.sourceforge.net/
-BuildRequires:	XFree86-devel
-#Buildrequires:	xorg-lib-libXext-devel #br for modular xorg
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXft-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,6 +36,7 @@ wy¶wietlaæ takie informacje, jak:
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -44,6 +45,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO
+%doc AUTHORS ChangeLog README TODO doc/conkyrc.sample
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/%{name}.1*
