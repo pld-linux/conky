@@ -1,5 +1,5 @@
 Summary:	A light-weight system monitor
-Summary(pl):	Monitor systemu dla ¶rodowiska graficznego
+Summary(pl.UTF-8):   Monitor systemu dla Å›rodowiska graficznego
 Name:		conky
 Version:	1.4.5
 Release:	1
@@ -20,12 +20,12 @@ can display arbitrary information (such as the date, CPU temperature
 from i2c, MPD info, and anything else you desire) to the root window
 in X11.
 
-%description -l pl
-Conky jest niewielkim monitorem systemu opartym na kodzie torsmo. Mo¿e
-wy¶wietlaæ takie informacje, jak:
+%description -l pl.UTF-8
+Conky jest niewielkim monitorem systemu opartym na kodzie torsmo. MoÅ¼e
+wyÅ›wietlaÄ‡ takie informacje, jak:
 - data
 - temperatura CPU
-- ilo¶æ miejsca na dysku itp.
+- iloÅ›Ä‡ miejsca na dysku itp.
 
 %prep
 %setup -q
