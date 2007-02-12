@@ -1,5 +1,5 @@
 Summary:	A light-weight system monitor
-Summary(pl.UTF-8):   Monitor systemu dla środowiska graficznego
+Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
 Version:	1.4.5
 Release:	1
