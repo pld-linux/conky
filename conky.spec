@@ -1,12 +1,12 @@
 Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
-Version:	1.4.7
+Version:	1.4.8
 Release:	1
 License:	Distributable (see COPYING doc)
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/conky/%{name}-%{version}.tar.bz2
-# Source0-md5:	40b929889da5f237c5f2af4a70d7f765
+# Source0-md5:	234e798da57864060928fc7097300b01
 URL:		http://conky.sourceforge.net/
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
