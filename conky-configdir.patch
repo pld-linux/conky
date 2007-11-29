@@ -1,0 +1,22 @@
+--- conky-1.4.9/src/Makefile.am~	2007-10-23 23:52:12.000000000 +0200
++++ conky-1.4.9/src/Makefile.am	2007-11-30 00:10:13.000000000 +0100
+@@ -25,7 +25,7 @@
+ # $Id$
+ 
+ INCLUDES =			\
+-	-DSYSTEM_CONFIG_FILE=\"$(sysconfdir)/conky/conky.conf\"
++	-DSYSTEM_CONFIG_FILE=\"$(sysconfdir)/conky.conf\"
+ 
+ bin_PROGRAMS = conky
+ 
+--- conky-1.4.9/data/Makefile.am~	2007-10-23 23:52:12.000000000 +0200
++++ conky-1.4.9/data/Makefile.am	2007-11-30 00:16:42.000000000 +0100
+@@ -24,7 +24,7 @@
+ #
+ # $Id$
+ 
+-configdir = ${sysconfdir}/conky
++configdir = ${sysconfdir}
+ dist_config_DATA = conky.conf
+ 
+ # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
