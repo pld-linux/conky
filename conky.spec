@@ -9,6 +9,8 @@ Source0:	http://dl.sourceforge.net/conky/%{name}-%{version}.tar.bz2
 # Source0-md5:	42d966fce5aa5c5a326575ec214bff07
 Patch0:		%{name}-configdir.patch
 URL:		http://conky.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -33,6 +35,10 @@ wyświetlać takie informacje, jak:
 %patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
