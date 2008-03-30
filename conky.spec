@@ -1,13 +1,14 @@
 Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
-Version:	1.4.9
+Version:	1.5.0
 Release:	1
 License:	Distributable (see COPYING doc)
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/conky/%{name}-%{version}.tar.bz2
-# Source0-md5:	42d966fce5aa5c5a326575ec214bff07
+# Source0-md5:	07fa339276289ddc31303a8081c85214
 Patch0:		%{name}-configdir.patch
+Patch1:		%{name}-headers.patch
 URL:		http://conky.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -33,6 +34,7 @@ wyświetlać takie informacje, jak:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
@@ -54,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}.conf
-#COPYING must be added (see COPYING file)
-%doc AUTHORS ChangeLog COPYING README TODO doc/conkyrc.sample
+# COPYING must be added (see COPYING file)
+%doc AUTHORS ChangeLog COPYING README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/%{name}.1*
