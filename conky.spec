@@ -13,6 +13,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
+BuildRequires:	libtool
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
