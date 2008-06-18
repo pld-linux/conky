@@ -35,6 +35,7 @@ wyświetlać takie informacje, jak:
 %patch0 -p1
 
 %build
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
