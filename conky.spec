@@ -16,6 +16,7 @@ BuildRequires:	freetype-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	readline-devel
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
@@ -28,8 +29,8 @@ from i2c, MPD info, and anything else you desire) to the root window
 in X11.
 
 %description -l pl.UTF-8
-Conky jest niewielkim monitorem systemu opartym na kodzie torsmo. Może
-wyświetlać takie informacje, jak:
+Conky jest niewielkim monitorem systemu opartym na kodzie torsmo.
+Może wyświetlać takie informacje, jak:
 - data
 - temperatura CPU
 - ilość miejsca na dysku itp.
