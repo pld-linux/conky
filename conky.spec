@@ -13,10 +13,10 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
+BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gettext-devel
 BuildRequires:	libtool
-BuildRequires:	pkgconfig
-BuildRequires:	readline-devel
+BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
