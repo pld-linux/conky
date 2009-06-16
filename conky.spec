@@ -1,12 +1,12 @@
 Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
-Version:	1.7.0
+Version:	1.7.1.1
 Release:	1
 License:	Distributable (see COPYING doc)
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/conky/%{name}-%{version}.tar.bz2
-# Source0-md5:	10360c37d76ab25f4d585bcdfd07f075
+# Source0-md5:	153a661e78a466c95b1b332e7cd599cb
 Patch0:		%{name}-configdir.patch
 URL:		http://conky.sourceforge.net/
 BuildRequires:	autoconf
@@ -16,7 +16,9 @@ BuildRequires:	freetype-devel
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gettext-devel
 BuildRequires:	libtool
+BuildRequires:	lua51-devel
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
@@ -38,10 +40,11 @@ Może wyświetlać takie informacje, jak:
 %prep
 %setup -q
 %patch0 -p1
+%{__sed} -i 's,lua5.1,lua51,' configure.ac
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
