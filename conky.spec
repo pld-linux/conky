@@ -13,10 +13,10 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
-BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gettext-devel
+BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	libtool
-BuildRequires:	lua51-devel
+BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-lib-libXdamage-devel
