@@ -1,12 +1,13 @@
 Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
-Version:	1.7.2
-Release:	2
+Version:	1.8.0
+Release:	1
 License:	Distributable (see COPYING doc)
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/conky/%{name}-%{version}.tar.bz2
-# Source0-md5:	cf6f5d45d42ad68c618c00271813b80d
+# Source0-md5:	494cbaf1108cfdb977fc80454d9b13e2
+Patch0:		%{name}-ncurses.patch
 URL:		http://conky.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -16,6 +17,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	libtool
 BuildRequires:	lua51-devel >= 5.1
+BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-lib-libXdamage-devel
@@ -38,6 +40,7 @@ Może wyświetlać takie informacje, jak:
 
 %prep
 %setup -q
+%patch0 -p1
 %{__sed} -i 's,lua5.1,lua51,' configure.ac
 
 %build
@@ -64,5 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog COPYING README TODO
 %dir %{_sysconfdir}/conky
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conky/%{name}.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conky/%{name}_no_x11.conf
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/%{name}.1*
