@@ -48,7 +48,7 @@ wyświetlać takie informacje, jak:
 %{__autoheader}
 %{__automake}
 %configure \
-	CFLAGS="`pkg-config ncurses --cflags`" \
+	CFLAGS="%{rpmcflags} `pkg-config ncurses --cflags`" \
 	LIBS="-ltinfo"
 %{__make}
 
