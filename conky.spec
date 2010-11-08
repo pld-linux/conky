@@ -1,3 +1,5 @@
+#
+# Conditional build:
 %bcond_without	lua_cairo	# without lua cairo bindings
 #
 Summary:	A light-weight system monitor
