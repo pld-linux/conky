@@ -1,9 +1,10 @@
 %bcond_without	lua_cairo	# without lua cairo bindings
+#
 Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
 Version:	1.8.1
-Release:	2
+Release:	3
 License:	Distributable (see COPYING doc)
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/conky/%{name}-%{version}.tar.bz2
@@ -20,7 +21,7 @@ BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
-%{?with_lua_cairo:BuildRequires:	tolua++-libs >= 1.0.90}
+%{?with_lua_cairo:BuildRequires:	tolua++-devel >= 1.0.90}
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
