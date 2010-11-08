@@ -1,4 +1,6 @@
 #
+# TODO: create separates subpackages for lua bindings
+#
 # Conditional build:
 %bcond_without	lua_cairo	# without lua cairo bindings
 #
@@ -76,8 +78,10 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conky/%{name}.conf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conky/%{name}_no_x11.conf
 %dir %{_libdir}/conky
+# TODO: create separate subapackages for lua bindings
 %if %{with lua_cairo}
 %{_libdir}/conky/libcairo.so.*.*.*
+%{_libdir}/conky/libcairo.so
 %ghost %{_libdir}/conky/libcairo.so.0
 %endif
 %{_mandir}/man1/%{name}.1*
