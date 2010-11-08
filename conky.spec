@@ -16,6 +16,7 @@ Source0:	http://downloads.sourceforge.net/conky/%{name}-%{version}.tar.bz2
 URL:		http://conky.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+%{?with_lua_cairo:BuildRequires:cairo-devel}
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
 BuildRequires:	gettext-devel
@@ -25,7 +26,7 @@ BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
-%{?with_lua_cairo:BuildRequires:	tolua++-devel >= 1.0.90}
+%{?with_lua_cairo:BuildRequires:tolua++-devel >= 1.0.90}
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
