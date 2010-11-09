@@ -1,6 +1,4 @@
 #
-# TODO: create separates subpackages for lua bindings
-#
 # Conditional build:
 %bcond_without	lua_cairo	# without lua cairo bindings
 #
@@ -26,7 +24,7 @@ BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
-%{?with_lua_cairo:BuildRequires:tolua++-devel >= 1.0.90}
+%{?with_lua_cairo:BuildRequires:tolua++ >= 1.0.90}
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
@@ -44,6 +42,17 @@ wyświetlać takie informacje, jak:
 - data
 - temperatura CPU
 - ilość miejsca na dysku itp.
+
+%package lua-cairo
+Summary:	Lua Cairo bindings for Conky
+Summary(pl.UTF-8):	Dowiązania Lua Cairo dla Conky
+Group:		Development/Languages
+
+%description lua-cairo
+Lua Cairo bindings for Conky.
+
+%description lua-cairo -l pl.UTF-8
+Dowiązania Lua Cairo dla Conky.
 
 %prep
 %setup -q
@@ -79,10 +88,12 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conky/%{name}.conf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conky/%{name}_no_x11.conf
 %dir %{_libdir}/conky
-# TODO: create separate subapackages for lua bindings
+%{_mandir}/man1/%{name}.1*
+
 %if %{with lua_cairo}
+%files lua-cairo
+%defattr(644,root,root,755)
 %{_libdir}/conky/libcairo.so.*.*.*
 %{_libdir}/conky/libcairo.so
 %ghost %{_libdir}/conky/libcairo.so.0
 %endif
-%{_mandir}/man1/%{name}.1*
