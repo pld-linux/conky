@@ -24,7 +24,7 @@ BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
-%{?with_lua_cairo:BuildRequires:tolua++ >= 1.0.90}
+%{?with_lua_cairo:BuildRequires:tolua++-devel >= 1.0.90}
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
