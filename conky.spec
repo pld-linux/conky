@@ -28,6 +28,7 @@ BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
+BuildRequires:	sqlite3-devel
 %if %{with lua_cairo} || %{with lua_imlib2}
 BuildRequires:	tolua++-devel >= 1.0.90
 %endif
