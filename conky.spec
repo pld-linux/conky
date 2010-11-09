@@ -47,6 +47,7 @@ wyświetlać takie informacje, jak:
 Summary:	Lua Cairo bindings for Conky
 Summary(pl.UTF-8):	Dowiązania Lua Cairo dla Conky
 Group:		Development/Languages
+Requires:	%{name} = %{version}-%{release}
 
 %description lua-cairo
 Lua Cairo bindings for Conky.
@@ -95,5 +96,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/conky/libcairo.so.*.*.*
 %{_libdir}/conky/libcairo.so
-%ghost %{_libdir}/conky/libcairo.so.0
 %endif
