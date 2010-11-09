@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	lua_cairo	# without lua cairo bindings
+%bcond_without	lua_imlib2	# without lua imlib2 bindings
 #
 Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
@@ -27,7 +28,9 @@ BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
-%{?with_lua_cairo:BuildRequires:	tolua++-devel >= 1.0.90}
+%if %{with lua_cairo} || %{with lua_imlib2}
+BuildRequires:	tolua++-devel >= 1.0.90
+%endif
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
@@ -86,7 +89,7 @@ Dowiązania Lua Imlib2 dla Conky.
 	--enable-curl \
 	--enable-imlib2 \
 	%{?with_lua_cairo:--enable-lua-cairo} \
-	--enable-lua-imlib2
+	%{?with_lua_imlib2:--enable-lua-imlib2}
 
 %{__make}
 
@@ -117,7 +120,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/conky/libcairo.so
 %endif
 
+%if %{with lua_imlib2}
 %files lua-imlib2
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/conky/libimlib2.so.*.*.*
 %{_libdir}/conky/libimlib2.so
+%endif
