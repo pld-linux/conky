@@ -12,19 +12,22 @@ Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/conky/%{name}-%{version}.tar.bz2
 # Source0-md5:	366dc6a5c2ebebfbe6f53da25061b5d6
 URL:		http://conky.sourceforge.net/
+BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-%{?with_lua_cairo:BuildRequires:cairo-devel}
+%{?with_lua_cairo:BuildRequires:	cairo-devel}
+BuildRequires:	curl-devel
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 2.0
+BuildRequires:	imlib2-devel
 BuildRequires:	libtool
 BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
-%{?with_lua_cairo:BuildRequires:tolua++-devel >= 1.0.90}
+%{?with_lua_cairo:BuildRequires:	tolua++-devel >= 1.0.90}
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
@@ -55,6 +58,18 @@ Lua Cairo bindings for Conky.
 %description lua-cairo -l pl.UTF-8
 Dowiązania Lua Cairo dla Conky.
 
+%package lua-imlib2
+Summary:	Lua Imlib2 bindings for Conky
+Summary(pl.UTF-8):	Dowiązania Lua Imlib2 dla Conky
+Group:		Development/Languages
+Requires:	%{name} = %{version}-%{release}
+
+%description lua-imlib2
+Lua Imlib2 bindings for Conky.
+
+%description lua-imlib2 -l pl.UTF-8
+Dowiązania Lua Imlib2 dla Conky.
+
 %prep
 %setup -q
 %{__sed} -i 's,lua5.1,lua51,' configure.ac
@@ -68,7 +83,11 @@ Dowiązania Lua Cairo dla Conky.
 %configure \
 	CFLAGS="%{rpmcflags} `pkg-config ncurses --cflags`" \
 	LIBS="-ltinfo" \
-	%{?with_lua_cairo:--enable-lua-cairo}
+	--enable-curl \
+	--enable-imlib2 \
+	%{?with_lua_cairo:--enable-lua-cairo} \
+	--enable-lua-imlib2
+
 %{__make}
 
 %install
@@ -94,6 +113,11 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with lua_cairo}
 %files lua-cairo
 %defattr(644,root,root,755)
-%{_libdir}/conky/libcairo.so.*.*.*
+%attr(755,root,root) %{_libdir}/conky/libcairo.so.*.*.*
 %{_libdir}/conky/libcairo.so
 %endif
+
+%files lua-imlib2
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/conky/libimlib2.so.*.*.*
+%{_libdir}/conky/libimlib2.so
