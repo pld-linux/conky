@@ -88,6 +88,7 @@ Dowiązania Lua Imlib2 dla Conky.
 	LIBS="-ltinfo" \
 	--enable-curl \
 	--enable-imlib2 \
+	--enable-weather-xoap \
 	%{?with_lua_cairo:--enable-lua-cairo} \
 	%{?with_lua_imlib2:--enable-lua-imlib2}
 
