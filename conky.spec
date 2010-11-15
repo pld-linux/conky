@@ -1,13 +1,15 @@
 #
+# TODO: fix build with lua. Now when lua enabled conky requires tolua++-devel when installing
+#
 # Conditional build:
-%bcond_without	lua_cairo	# without lua cairo bindings
-%bcond_without	lua_imlib2	# without lua imlib2 bindings
+%bcond_with	lua_cairo	# without lua cairo bindings
+%bcond_with	lua_imlib2	# without lua imlib2 bindings
 #
 Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
 Version:	1.8.1
-Release:	3
+Release:	1
 License:	Distributable (see COPYING doc)
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/conky/%{name}-%{version}.tar.bz2
