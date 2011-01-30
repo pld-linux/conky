@@ -26,6 +26,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	imlib2-devel
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel
 BuildRequires:	lua51-devel >= 5.1
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig >= 1:0.19
