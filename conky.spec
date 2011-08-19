@@ -9,7 +9,7 @@ Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
 Version:	1.8.1
-Release:	2
+Release:	3
 License:	Distributable (see COPYING doc)
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/conky/%{name}-%{version}.tar.bz2
@@ -93,6 +93,8 @@ Dowiązania Lua Imlib2 dla Conky.
 	--enable-curl \
 	--enable-imlib2 \
 	--enable-weather-xoap \
+	--enable-wlan \
+	--enable-rss \
 	%{?with_lua_cairo:--enable-lua-cairo} \
 	%{?with_lua_imlib2:--enable-lua-imlib2}
 
