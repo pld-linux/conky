@@ -89,7 +89,6 @@ Dowiązania Lua Imlib2 dla Conky.
 %{__automake}
 %configure \
 	CFLAGS="%{rpmcflags} `pkg-config ncurses --cflags`" \
-	LIBS="-ltinfo" \
 	--enable-curl \
 	--enable-imlib2 \
 	--enable-weather-xoap \
