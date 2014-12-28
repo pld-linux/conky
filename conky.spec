@@ -22,7 +22,7 @@ BuildRequires:	automake
 BuildRequires:	curl-devel
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	imlib2-devel
 BuildRequires:	libtool
