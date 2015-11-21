@@ -9,7 +9,7 @@ Summary:	A light-weight system monitor
 Summary(pl.UTF-8):	Monitor systemu dla środowiska graficznego
 Name:		conky
 Version:	1.8.1
-Release:	4
+Release:	5
 License:	Distributable (see COPYING doc)
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/conky/%{name}-%{version}.tar.bz2
@@ -116,7 +116,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/conky
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conky/%{name}.conf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conky/%{name}_no_x11.conf
+%if %{with lua_cairo} || %{with lua_imlib2}
 %dir %{_libdir}/conky
+%endif
 %{_mandir}/man1/%{name}.1*
 
 %if %{with lua_cairo}
